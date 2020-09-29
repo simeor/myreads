@@ -7,5 +7,9 @@ class PagesController < ApplicationController
   end
 
   def dashboard
+    @user = current_user
+    @current_read = @user.readings.where(status: "Currently Reading")
+    @read_books = @user.readings.where(status: "Read")
+    @want_to_read = @user.readings.where(status: "Want to Read")
   end
 end

@@ -4,7 +4,9 @@
 
     <ul class="list-group">
       <% @top_books.each do |book| %>
+      <%= link_to book_path(book) do %>
         <li class="list-group-item"><%= book.title %> (<%= book.author %>)</li>
+      <% end %>
       <% end %>
     </ul>
   </div>

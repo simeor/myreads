@@ -1,12 +1,30 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background: #9b152e;
+
 }
+
+.navbar-light .navbar-nav .nav-link {
+  color: $logo;
+}
+
+.navbar-light .navbar-nav .active .nav-link {
+  color: $logo;
+}
+
+
+.navbar-lewagon h1{
+  font-family: 'Libre Baskerville', serif;
+  margin: 0;
+  color: #F8EBB1;
+}
+
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 40px;
+  height: 50px;
+  margin-right: 10px;
 }
