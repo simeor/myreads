@@ -2,23 +2,21 @@
 
 <h3>current read </h3>
 <% @current_read.each do |reading| %>
- <%= link_to book_path(reading.book) do %>
-  <%= reading.book.title %>
- <% end %>
+  <%= link_to book_path(reading.book) do %>
+    <%= reading.book.title %>
+  <% end %>
 <% end %>
 
 <h3>read </h3>
 <% @read_books.each do |reading| %>
- <%= link_to book_path(reading.book) do %>
-  <%= reading.book.title %>
- <% end %>
+  <%= link_to book_path(reading.book) do %>
+    <%= reading.book.title %>
+  <% end %>
 <% end %>
 
 <h3>want to read </h3>
 <% @want_to_read.each do |reading| %>
- <%= link_to book_path(reading.book) do %>
-  <%= reading.book.title %>
- <% end %>
+  <%= link_to book_path(reading.book) do %>
+    <%= reading.book.title %>
+  <% end %>
 <% end %>
-
-
