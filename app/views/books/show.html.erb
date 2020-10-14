@@ -1,6 +1,20 @@
-<h1>Book Show Page</h1>
-
-<%= @book.title %>
-
-<%= link_to "add to a list", new_book_reading_path(@book) %>
-
+<div class="container">
+  <div class="book_show_item">
+    <div class="row">
+      <div class="col-12 col-md-6 col-lg-3 text-center">
+        <% if @book.cover_url.nil? %>
+          <%= image_tag("myreads-logo.png") %>
+        <% else %>
+          <%= image_tag("#{@book.cover_url}") %>
+        <% end %>
+      </div>
+      <div class="col-12 col-md-6 col-lg-9">
+        <div class="book_show_details">
+          <h3><%= @book.title %>, <%= @book.author %> (<%= @book.year %>)</h3>
+          <p><%= @book.summary %></p>
+          <%= link_to "add to a list", new_book_reading_path(@book), class:"btn btn-primary" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

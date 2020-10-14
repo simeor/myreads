@@ -1,17 +1,6 @@
 <div class="container">
   <div class="home-books">
-    <h1>Pages#home</h1>
-
-    <ul class="list-group">
-      <% @top_books.each do |book| %>
-      <%= link_to book_path(book) do %>
-        <li class="list-group-item"><%= book.title %> (<%= book.author %>)</li>
-      <% end %>
-      <% end %>
-    </ul>
-  </div>
-
-  <div>
+    <div>
     <h2>Top Books This Week</h2>
     <div class="row row-cols-2">
       <% @ranking.each do |book| %>
@@ -23,7 +12,7 @@
               </div>
               <div class="col-8">
                 <div class="card-body">
-                  <h5 class="card-title"><%= book["rank"] %>. <%= book["title"].titleize %></h5>
+                  <h6 class="card-title"><%= book["rank"] %>. <%= book["title"].titleize %></h6>
                   <p class="card-text"><%= book["description"] %></p>
                 </div>
               </div>
@@ -32,6 +21,15 @@
         </div>
       <% end %>
     </div>
+  </div>
+
+    <ul class="list-group">
+      <% @top_books.each do |book| %>
+      <%= link_to book_path(book) do %>
+        <li class="list-group-item"><%= book.title %> (<%= book.author %>)</li>
+      <% end %>
+      <% end %>
+    </ul>
   </div>
 
 </div>

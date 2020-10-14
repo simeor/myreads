@@ -26,4 +26,5 @@ class PagesController < ApplicationController
     books = JSON.parse(books_serialized)
     books["results"]["books"]
   end
+
 end
