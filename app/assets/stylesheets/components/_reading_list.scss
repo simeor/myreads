@@ -1,0 +1,28 @@
+.reading-list {
+  padding: 8px;
+  a {
+    text-decoration: none;
+    color: black;
+    opacity: 0.8;
+    &:hover {
+      opacity: 1;
+    }
+  };
+}
+
+.reading-list-card {
+  border: 1px solid lightgrey;
+  padding: 8px;
+  background-color: white;
+  display: flex;
+  img{
+    object-fit: cover;
+    max-width: 160px;
+    padding: 16px;
+  }
+}
+
+.reading-list-card-info {
+  padding: 16px;
+  flex-grow: 1;
+}

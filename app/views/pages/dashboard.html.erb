@@ -1,22 +1,40 @@
-<h1>Dashboard</h1>
+<div class="container">
+  <h1 class="mt-3">Dashboard</h1>
 
-<h3>current read </h3>
-<% @current_read.each do |reading| %>
-  <%= link_to book_path(reading.book) do %>
-    <%= reading.book.title %>
-  <% end %>
-<% end %>
+  <div class="reading-list">
+    <h3>Current reading</h3>
+      <% @current_read.each do |reading| %>
+        <%= link_to book_path(reading.book) do %>
+          <div class="reading-list-card">
+            <%= image_tag("#{reading.book.cover_url}") %>
+            <div class="reading-list-card-info">
+              <h4><%= reading.book.title %></h4>
+              <p>by <%= reading.book.author %></p>
+              <h5>Progress:</h5>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: <%= reading.progress%>%;" aria-valuenow="<%= reading.progress %>" aria-valuemin="0" aria-valuemax="100"><%= reading.progress %>%</div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+  </div>
 
-<h3>read </h3>
-<% @read_books.each do |reading| %>
-  <%= link_to book_path(reading.book) do %>
-    <%= reading.book.title %>
-  <% end %>
-<% end %>
+  <div class="reading-list">
+    <h3>Read</h3>
+    <% @read_books.each do |reading| %>
+      <%= link_to book_path(reading.book) do %>
+        <%= reading.book.title %>
+      <% end %>
+    <% end %>
+  </div>
 
-<h3>want to read </h3>
-<% @want_to_read.each do |reading| %>
-  <%= link_to book_path(reading.book) do %>
-    <%= reading.book.title %>
-  <% end %>
-<% end %>
+  <div class="reading-list">
+    <h3>Want to Read</h3>
+    <% @want_to_read.each do |reading| %>
+      <%= link_to book_path(reading.book) do %>
+        <%= reading.book.title %>
+      <% end %>
+    <% end %>
+  </div>
+</div>
